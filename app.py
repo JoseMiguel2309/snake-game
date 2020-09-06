@@ -1,7 +1,5 @@
 import turtle
-
 import random
-
 import time
 
 score = 0
@@ -20,7 +18,7 @@ texto.color('white')
 texto.penup()
 texto.hideturtle()
 texto.goto(0, 260)
-texto.write('Score: 0            High score: 0', align='center', font=('Courier', 20))
+texto.write('Score: 0     High score: 0', align='center', font=('Courier', 20))
 
 # Snake
 # Head
@@ -88,12 +86,12 @@ while True:
         head.goto(0, 0)
         head.direction = 'stop'
    
-    # Hidden
-    #for body in body_now:
-        #body.goto(4000, 4000)
+        # Hidden
+        for body in body_now:
+            body.goto(4000, 4000)
     
-    # Clean list
-    body_now.clear()
+        # Clean list
+        body_now.clear()
 
     if head.distance(food) < 20:
         x = random.randint(-280, 280)
@@ -113,7 +111,7 @@ while True:
             high_score = score
 
         texto.clear()
-        #texto.write(('Score: {score}    High Score: {high_score}').format(), align='center', font=('Courier', 20))
+        texto.write(('Score: {}    High Score: {}').format(score, high_score), align='center', font=('Courier', 24))
     
     body_total = len(body_now)
     
